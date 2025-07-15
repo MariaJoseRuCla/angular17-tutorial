@@ -5,9 +5,14 @@ import { Header } from './component/header/header';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Header],
+  standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('angular17-tutorial');
+  number: number = 0;
+
+  addOne() {
+    this.number++
+  }
 }
